@@ -1,9 +1,6 @@
 Tasks = new Mongo.Collection("tasks");
 
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
   Template.body.helpers({
     tasks: function () {
         return Tasks.find({}, {sort: {createdAt: -1}});
